@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scary Halloween Party</title>
+    <link rel=”shortcut icon” type=”image/png” href=”/favicon.png”/>
+    <link href="https://fonts.googleapis.com/css?family=Creepster|Nosifer&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nosifer&display=swap" rel="stylesheet">
+    <link href="imagenes/favicon.ico" rel="shortcut icon">
+    
+    <style>
+       body {background-color:black;}
+       #wrapper {position:relative;                           
+                 background-image:url("imagenes/fondo.jpg");   
+                 width:1200px;                                
+                 height:900px;                                
+                 margin: 20px auto;                           
+                 border-radius:200px;                          
+                 box-shadow:rgb(143, 98, 15) 20px 20px 20px, 
+                 rgb(143, 98, 15) -20px -20px 20px,
+                 rgb(143, 98, 15) 20px -20px 20px,
+                 rgb(143, 98, 15) -20px 20px 20px;}
+        h1 {position:absolute;   
+            left:80px;            
+            top:20px;
+            font-family: 'Nosifer', cursive; 
+            font-size:250%;                   
+            }
+        #p1 {position:absolute;
+             top:300px;
+             left:300px;
+             font-size:200%;
+             font-family: 'Creepster', cursive;}       
+        #window {position:absolute;
+                 top:160px;
+                 left:650px;
+                 width:60px;
+                 height:80px;
+                 
+                 }
+        #niño {position:absolute;           
+              top:600px;
+              left:575px;
+              width:160px;                 
+              height:150px;
+              
+            }
+       #perro {position:absolute;           
+              top:700px;
+              left:180px;
+              width:150px;                 
+              height:150px;
+             
+              ;} 
+ #calabaza {position:absolute;           
+              top:700px;
+              left:850px;
+              width:200px;                 
+              height:100px;
+              
+              ;} 
+        #zombie {position:absolute;
+                 top:550px;
+                 left:600px;
+                 visibility:hidden;}
+                 #zombie1 {position:absolute;
+                 top:600px;
+                 left:200px;
+                 visibility:hidden;}
+      #llave {position:absolute;
+                 top:300px;
+                 left:200px;
+                 visibility:hidden;} 
+        #bats { position:absolute;
+            visibility:hidden;}
+    </style>
+    
+    <script>
+       function mostrar(id){
+           document.getElementById(id).style.visibility="visible";
+       }
+       function ocultar(id){
+           document.getElementById(id).style.visibility="hidden";
+       }
+       function sonar(id){
+           document.getElementById(id).play();
+       }
+       function parar(id){
+           document.getElementById(id).pause();
+       }
+    </script>
+</head>   
+<body>
+    
+    <audio id="demon">
+      <source src="sonidos/Demon_Girls_Mockingbir-Hello-1365708396.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div id="wrapper">
+      <h1>¡¡Fiesta de halloween!!</h1>
+      <div id="window"></div>
+      <p id="p1">Encuentra la llave , pero ten cuidado</p>
+      <div id="niño" onmouseover="mostrar('zombie');sonar('demon')" 
+                    onmouseout="ocultar('zombie');parar('demon')"></div>
+      <div id="perro" onmouseover="mostrar('zombie1');" 
+                      onmouseout="ocultar('zombie1');"></div> 
+     <div id="calabaza" onmouseover="mostrar('llave');" 
+                        onmouseout="ocultar('llave');"></div>  
+
+                     
+
+      <img id="zombie"  src="imagenes/Zombi.gif" height="300">
+      <img id="zombie1"  src="imagenes/zombi1.gif" height="300">
+      <img id="bats" src="imagenes/bats.gif">
+      <img id="llave" src="imagenes/llave.gif" height="300">
+    </div>
+</body>
+</html>
